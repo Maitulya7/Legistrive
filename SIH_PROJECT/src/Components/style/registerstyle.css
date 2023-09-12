@@ -1,0 +1,165 @@
+:root {
+  --primary-color: #4267B2;
+  --secondary-color: #7AD044;
+  --sub-title-color: #555;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.input {
+  height: 50px;
+}
+
+.left-container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  width: 40%;
+  color: var(--primary-color);
+}
+
+.left-container h1 {
+  font-size: 45px;
+  color: var(--secondary-color);
+  margin: 0;
+  font-weight: 500;
+  padding: 0;
+}
+
+.top-title {
+  padding-bottom: 30px;
+  padding-top: 10px;
+  font-size: 18px;
+  color: var(--sub-title-color);
+  font-weight: 600;
+}
+
+.container > * {
+  margin: 0 40px;
+}
+
+.right-container {
+  flex: .3;
+  text-align: center;
+}
+
+.right-container p {
+  padding-top: 20px;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="number"]::placeholder,
+input[type="password"]::placeholder {
+  padding: 20px;
+}
+
+.btn-register {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 30px;
+  cursor: pointer;
+  height: 50px;
+  width: 100%;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-register:hover {
+  border: 2px solid #555;
+}
+
+a {
+  display: flex;
+  background-color: var(--secondary-color);
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 15px;
+  cursor: pointer;
+  height: 50px;
+  width: 100%;
+}
+
+a:hover {
+  text-decoration: none;
+  border: 2px solid #555;
+}
+
+.sub-title {
+  padding-top: 35px;
+  color: var(--sub-title-color);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-container {
+    width: 80%;
+    margin: 20px 0;
+  }
+
+  .left-container h1 {
+    font-size: 40px;
+  }
+
+  .top-title {
+    font-size: 15px;
+  }
+
+  .right-container {
+    display: none;
+  }
+
+  .btn-register,
+  .btn-login {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .left-container {
+    width: 90%;
+  }
+}
