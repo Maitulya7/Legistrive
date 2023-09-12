@@ -1,7 +1,5 @@
 # Legistrive Website
 
-![Legistrive Logo](path/to/legistrive-logo.png) <!-- Include your logo or any relevant image -->
-
 ## Introduction
 
 Welcome to the Legistrive website repository! Legistrive is a platform that bridges the gap between legal talent and opportunities, connecting legal professionals and organizations. This website serves as the front-end for the Legistrive platform and is built using React, TypeScript, and Vite.js.
