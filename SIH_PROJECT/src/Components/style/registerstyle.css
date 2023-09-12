@@ -4,19 +4,20 @@
   --sub-title-color: #555;
 }
 
-.container {
+.register-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background-color: #fff;
+  font-family: 'Poppins', sans-serif;
 }
 
 .input {
   height: 50px;
 }
 
-.left-container {
+.register-left-container {
   text-align: center;
   padding: 20px;
   border-radius: 10px;
@@ -24,7 +25,7 @@
   color: var(--primary-color);
 }
 
-.left-container h1 {
+.register-left-container h1 {
   font-size: 45px;
   color: var(--secondary-color);
   margin: 0;
@@ -32,7 +33,7 @@
   padding: 0;
 }
 
-.top-title {
+.register-top-title {
   padding-bottom: 30px;
   padding-top: 10px;
   font-size: 18px;
@@ -40,16 +41,16 @@
   font-weight: 600;
 }
 
-.container > * {
+.register-container > * {
   margin: 0 40px;
 }
 
-.right-container {
+.register-right-container {
   flex: .3;
   text-align: center;
 }
 
-.right-container p {
+.register-right-container p {
   padding-top: 20px;
   font-weight: 500;
 }
@@ -83,7 +84,7 @@ input[type="password"]::placeholder {
   padding: 20px;
 }
 
-.btn-register {
+.register-btn-register {
   background-color: var(--primary-color);
   color: #fff;
   border: none;
@@ -122,7 +123,7 @@ a:hover {
   border: 2px solid #555;
 }
 
-.sub-title {
+.register-sub-title {
   padding-top: 35px;
   color: var(--sub-title-color);
   font-size: 16px;
@@ -130,36 +131,36 @@ a:hover {
 }
 
 @media screen and (max-width: 768px) {
-  .container {
+  .register-container {
     flex-direction: column;
     align-items: center;
   }
 
-  .left-container {
+  .register-left-container {
     width: 80%;
     margin: 20px 0;
   }
 
-  .left-container h1 {
+  .register-left-container h1 {
     font-size: 40px;
   }
 
-  .top-title {
+  .register-top-title {
     font-size: 15px;
   }
 
-  .right-container {
+  .register-right-container {
     display: none;
   }
 
-  .btn-register,
-  .btn-login {
+  .register-btn-register,
+  .register-btn-login {
     width: 100%;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .left-container {
+  .register-left-container {
     width: 90%;
   }
 }

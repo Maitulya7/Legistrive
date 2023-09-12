@@ -6,25 +6,25 @@ function Register (){
     return(
         <>  
 
-            <div className="container">
-                <div className="left-container">
+            <div className="register-container">
+                <div className="register-left-container">
                     <h1>Register Now</h1>
-                    <p className="top-title">Legistrive: Bridging the Gap Between Legal Talent and Opportunities, One Connection at a Time.</p>
+                    <p className="register-top-title">Legistrive: Bridging the Gap Between Legal Talent and Opportunities, One Connection at a Time.</p>
                     
                     <input type="text" placeholder="Username"/>
                     <input type="email" placeholder="Email"/>
                     <input type="number" placeholder="Phone Number"/>
                     <input type="password" placeholder="Password"/>
 
-                    <button className="btn-register">
+                    <button className="register-btn-register">
                         Register
                     </button>
 
-                    <p className="sub-title">Already A Member ?</p>
+                    <p className="register-sub-title">Already A Member ?</p>
                     <Link to="/login">Login</Link>
                 </div>
 
-                <div className="right-container">
+                <div className="register-right-container">
                     <img src={img1} alt="img" />
                     <p>Unlocking Legal Opportunities and Talent with Legistrive.</p>
                 </div>
