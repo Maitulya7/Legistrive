@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { Link } from "react-router-dom";
-import img2 from "../assets/two.svg";
+import img2 from "../assets/one.svg";
 import "../Components/style/loginstyle.css"
 
 interface FormData {
