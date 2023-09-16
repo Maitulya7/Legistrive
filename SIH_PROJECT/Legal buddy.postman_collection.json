@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "b905edcf-a6f8-4616-bcf2-dd24c0bb90b7",
+		"name": "Legal buddy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27537768"
+	},
+	"item": [
+		{
+			"name": "lawyer-signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FIRSTNAME\": \"ro3\",\r\n    \"LASTNAME\": \"chouhan\",\r\n    \"PASSWORD\": \"12345\",\r\n    \"MOBILENUMBER\": \"1111111111\",\r\n    \"EMAIL\": \"ro3@gmail.com\",\r\n    \"GENDER\": \"Male\",\r\n    \"STATE\": \"Gujarat\",\r\n    \"CITY\": \"Vapi\",\r\n    \"BAR_COUNCIL_ID\": \"12345\",\r\n    \"ID_NUMBER\": \"A1234567\",\r\n    \"YEAR\": \"2024\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/lawyerSignup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"lawyerSignup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lawyer-login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"EMAIL\": \"ro2@gmail.com\",\r\n    \"PASSWORD\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/lawyerLogin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"lawyerLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"test1\",\r\n    \"last_name\": \"test1\",\r\n    \"password\": \"12345\",\r\n    \"phone_number\": \"1111111111\",\r\n    \"email\": \"test1@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/userSignup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"userSignup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book-service",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"CUSTOMER_PHONE_NUMBER\": \"1234567890\",\r\n  \"LAWYER_PHONE_NUMBER\": \"1234567890\",\r\n  \"LAWYER_EMAIL\": \"ro1@gmail.com\",\r\n  \"CREATED_ON\": \"2023-09-13T12:00:00Z\",\r\n  \"SERVICE_CATEGORY\": \"Legal\",\r\n  \"SERVICE_CHARGE\": 100,\r\n  \"SERVICE_DESCRIPTION\": \"Need legal advice for a contract\",\r\n  \"ISPRIVATE\": false\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/bookLawyer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bookLawyer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deployed-/lawyerSignup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FIRSTNAME\": \"ro3\",\r\n    \"LASTNAME\": \"chouhan\",\r\n    \"PASSWORD\": \"12345\",\r\n    \"MOBILENUMBER\": \"1111111111\",\r\n    \"EMAIL\": \"ro4@gmail.com\",\r\n    \"GENDER\": \"Male\",\r\n    \"STATE\": \"Gujarat\",\r\n    \"CITY\": \"Vapi\",\r\n    \"BAR_COUNCIL_ID\": \"12345\",\r\n    \"ID_NUMBER\": \"A1234567\",\r\n    \"YEAR\": \"2024\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://legal-buddy-ogyb.onrender.com/lawyerSignup",
+					"protocol": "https",
+					"host": [
+						"legal-buddy-ogyb",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"lawyerSignup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"FIRSTNAME\": \"John\",\r\n  \"LASTNAME\": \"Doe\",\r\n  \"EMAIL\": \"ro1@gmail.com\",\r\n  \"SERVICE_CHARGE\": \"200\",\r\n  \"BIO\": \"I am an experienced lawyer.\",\r\n  \"EXPERIENCE\": \"10 years\",\r\n  \"LANGUAGES\": [\"English\", \"Spanish\"],\r\n  \"LOCATION\": \"New York\",\r\n  \"SPECIALITIES\": [\"Family Law\", \"Criminal Defense\"],\r\n  \"BOOKED_BY\": [],\r\n  \"CASES_ASSIGNED\": 5,\r\n  \"CASES_SOLVED\": 3\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/saveLawyerData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"saveLawyerData"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
