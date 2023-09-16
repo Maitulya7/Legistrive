@@ -1,0 +1,88 @@
+.lawyer-card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px;
+    width: 100%; /* Make the card width responsive */
+    max-width: 500px; /* Limit the maximum width for larger screens */
+    height: auto; /* Allow the card's height to adjust based on content */
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  
+  .lawyer-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .lawyer-card-rating {
+    color: white;
+    background-color: green;
+    border-radius: 15px;
+    padding: 4px 12px;
+  }
+  
+  .lawyer-card-options {
+    display: flex;
+    margin-top: 12px;
+  }
+  
+  .languages-section {
+    margin-bottom: 10px;
+  }
+  
+  .call-button,
+  .message-button {
+    margin-right: 8px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .lawyer-card-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+    align-items: flex-start;
+    margin-top: 12px;
+  }
+  
+  .lawyer-card-profile {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    margin-right: 16px;
+    /* Add image styling here if needed */
+  }
+  
+  .lawyer-card-details {
+    flex: 1;
+  }
+  
+  .skill-tag {
+    background-color: #007bff;
+    color: white;
+    padding: 4px 8px;
+    margin-right: 4px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }
+  
+  /* Add media query for smaller screens */
+  @media screen and (max-width: 768px) {
+    .lawyer-card {
+      width: 90%; /* Adjust card width for smaller screens */
+      max-width: none; /* Remove max-width restriction */
+    }
+  
+    .lawyer-card-content {
+      flex-direction: column; /* Stack content on top of each other for smaller screens */
+    }
+  
+    .lawyer-card-profile {
+      margin-right: 0; /* Remove margin for profile image on smaller screens */
+      margin-bottom: 12px; /* Add margin below profile image on smaller screens */
+    }
+  }
+  
