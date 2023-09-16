@@ -2,6 +2,8 @@ import "../Components/style/Herostyle.css"
 import heroTop from "../assets/hero-top.svg";
 import heroBottom from "../assets/hero-bottom.svg"
 import heroBg from "../assets/hero-bg.png"
+import { Link } from "react-router-dom";
+
 
 function Hero(){
     return(
@@ -11,7 +13,7 @@ function Hero(){
             <p>The journey to owning a property is a significant milestone in one's life, often representing a dream come true. However, navigating the complex and ever-changing real estate landscape can be daunting.</p>
             <img alt="img" src={heroBg}/>
 
-            <button>Talk To Lawyer</button>
+            <Link className="Hero-btn" to={"./LawyerCard"}>Talk To Lawyer</Link>
         </div>
         <div className="one">
 

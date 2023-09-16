@@ -1,5 +1,5 @@
 import React from "react";
-import "./style/LawyearCard.css"; // Import your CSS file
+import "../Components/style/LawyearCard.css"; 
 
 const LawyerCard = () => {
   // Dummy lawyer data

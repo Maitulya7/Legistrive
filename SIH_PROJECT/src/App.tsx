@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Register />} /> */}
          <Route path="/" element={<Home />} />
          <Route path="/Lawyer" element={<Lawyer />} />
-         <Route path="/dashboard" element={<LawyerCard/>}/>
+         <Route path="/LawyerCard" element={<LawyerCard/>}/>
       </Routes>
     </Router>
   );
