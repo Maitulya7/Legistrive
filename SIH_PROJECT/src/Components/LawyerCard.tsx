@@ -19,8 +19,8 @@ const LawyerCard: React.FC = () => {
   const [language, setLanguage] = useState<string[]>([]);
   const [doFilter, setDoFilter] = useState(false);
   const [lawyerDataArray, setLawyerDataArray] = useState<LawyerData[]>([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  
   const lawyerData: LawyerData = {
     name: "John Doe",
     address: "123 Main St, City",
@@ -84,6 +84,10 @@ const LawyerCard: React.FC = () => {
     setDoFilter(true);
   };
 
+  const onSearch = (query: string) => {
+    console.log(query);
+  };
+
   useEffect(() => {
     // Move the API call logic inside useEffect
     if (doFilter) {
@@ -91,8 +95,9 @@ const LawyerCard: React.FC = () => {
         LOCATION: location,
         LANGUAGES: language,
         SPECIALITIES: selectedOptions,
+        QUERY: searchTerm,
       };
-      
+
       setDoFilter(false);
 
       const filterAPIUrl = "http://localhost:3000/filterLawyer";
@@ -110,15 +115,12 @@ const LawyerCard: React.FC = () => {
 
       fetchData();
     }
-  }, [doFilter, selectedOptions, location, language]);
+  }, [doFilter, selectedOptions, location, language, searchTerm]);
 
   return (
     <div className="lawyer-data">
       <div className="category-bar">
-        <select
-          value={location}
-          onChange={(e) => handleCity(e.target.value)}
-        >
+        <select value={location} onChange={(e) => handleCity(e.target.value)}>
           <option value="">Select a city</option>
           {cities.map((city) => (
             <option key={city} value={city}>
@@ -154,12 +156,21 @@ const LawyerCard: React.FC = () => {
             {option}
           </label>
         ))}
-
       </div>
       <div className="card-area">
-      {/* {lawyerDataArray.map((lawyerData, index) => (
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button onClick={() => onSearch(searchTerm)}>Search</button>
+        </div>
+
+        {/* {lawyerDataArray.map((lawyerData, index) => (
       ))}  */}
-      {/* <Lcard lawyerData={lawyerData} /> */}
+        {/* <Lcard lawyerData={lawyerData} /> */}
       </div>
       <div>{selectedOptions}</div>
     </div>

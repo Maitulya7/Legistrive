@@ -10,6 +10,7 @@
 .category-bar {
   background-color: white;
   padding: 1%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .category-bar label {
@@ -21,6 +22,40 @@
 .category-bar input[type="checkbox"] {
   margin-right: 8px; /* Add right margin for the gap */
 }
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  width: 800px;
+}
+
+input[type="text"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
 
 .divider-line {
   margin: 20px 0; /* Adjust the margin as needed */
@@ -113,5 +148,15 @@
       margin-right: 0; /* Remove margin for profile image on smaller screens */
       margin-bottom: 12px; /* Add margin below profile image on smaller screens */
     }
+
+    .search-bar {
+      width: 500px;
+    }
   }
+
+  @media (max-width: 768px) {
+    .search-bar {
+        width: 90%;
+    }
+}
   
