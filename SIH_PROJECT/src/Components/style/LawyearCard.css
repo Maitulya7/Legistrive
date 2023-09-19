@@ -1,13 +1,42 @@
+.lawyer-data {
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  padding: 3%;
+  justify-content: space-between;
+}
+
+.category-bar {
+  background-color: white;
+  padding: 1%;
+}
+
+.category-bar label {
+  display: flex; /* Make labels a flex container */
+  align-items: center; /* Center items vertically (optional) */
+  margin-bottom: 8px; /* Add spacing between options */
+}
+
+.category-bar input[type="checkbox"] {
+  margin-right: 8px; /* Add right margin for the gap */
+}
+
+.divider-line {
+  margin: 20px 0; /* Adjust the margin as needed */
+  border: 1px solid #ccc; /* Add border styling */
+}
+
 .lawyer-card {
+    background-color: white;
     border: 1px solid #ccc;
     padding: 16px;
-    margin: 16px;
     width: 100%; /* Make the card width responsive */
     max-width: 500px; /* Limit the maximum width for larger screens */
-    height: auto; /* Allow the card's height to adjust based on content */
+    height: 36vh; /* Allow the card's height to adjust based on content */
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: 5px;
   }
   
   .lawyer-card-header {
