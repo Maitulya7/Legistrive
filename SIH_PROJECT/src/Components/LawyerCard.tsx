@@ -21,15 +21,36 @@ const LawyerCard: React.FC = () => {
   const [lawyerDataArray, setLawyerDataArray] = useState<LawyerData[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const lawyerData: LawyerData = {
-    name: "John Doe",
-    address: "123 Main St, City",
-    experience: "5 years",
-    skills: ["Divorce", "Child Custody", "Mediation"],
-    rating: 4.5,
-    reviews: 27,
-    languages: ["English", "Spanish"],
+
+  //Retrive LawyerData
+  const fetchData = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/LawyerData", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        }
+      });
+
+      if (response.ok) {
+        const lawyerData = await response.json();
+        // Now you have the lawyerData in the state
+
+        setLawyerDataArray(lawyerData);
+        console.log(lawyerData);
+      } else {
+        console.error("Failed to fetch lawyer data:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
+
+  // Call the fetchData function to retrieve lawyer data when needed
+  useEffect(() => {
+    // Call the fetchData function to retrieve lawyer data when the component mounts
+    fetchData();
+  }, []); 
 
   const problemCategory = [
     "Family Law",
@@ -101,6 +122,7 @@ const LawyerCard: React.FC = () => {
       setDoFilter(false);
 
       const filterAPIUrl = "http://localhost:3000/filterLawyer";
+      console.log(filterAPIUrl);
 
       const fetchData = async () => {
         try {
@@ -168,9 +190,10 @@ const LawyerCard: React.FC = () => {
           <button onClick={() => onSearch(searchTerm)}>Search</button>
         </div>
 
-        {/* {lawyerDataArray.map((lawyerData, index) => (
-      ))}  */}
-        {/* <Lcard lawyerData={lawyerData} /> */}
+        {lawyerDataArray.map((lawyerData, index) => (
+           <Lcard lawyerData={lawyerData} /> 
+      ))} 
+        
       </div>
       <div>{selectedOptions}</div>
     </div>

@@ -1,7 +1,7 @@
-import React from "react";
 import "../Components/style/LawyearCard.css"; 
 
 const Lcard = ({lawyerData}:any) => {
+  console.log(lawyerData)
   return (
     <div className="lawyer-card">
       <div className="lawyer-card-header">

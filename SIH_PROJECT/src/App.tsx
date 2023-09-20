@@ -9,12 +9,12 @@ import Login from './Components/login';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
-const phone_number=localStorage.getItem("phoneNumber");
+
 
   useEffect(() => {
+    const phone_number=localStorage.getItem("phoneNumber");
     setIsAuthenticated(phone_number !== null);
   }, []);
-  console.log(phone_number)
   return (
     <Router>
       <Routes>
