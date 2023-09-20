@@ -1,0 +1,21 @@
+/* src/components/Message.css */
+.message {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+  width: auto;
+  max-width: 60%;
+  word-wrap: break-word; /* Add this line to break lines when needed */
+}
+
+.user-message {
+  background-color: #007bff;
+  color: white;
+  align-self: flex-end;
+}
+
+.bot-message {
+  background-color: #f2f2f2;
+  color: black;
+}

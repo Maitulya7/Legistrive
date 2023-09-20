@@ -1,0 +1,98 @@
+/* src/Chatbot.css */
+.chatbot-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 60px;
+    right: 40px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .chatbot-modal {
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    width: 50%;
+    position: fixed;
+    bottom: 70px; /* Adjust the distance above the chatbot icon */
+    right: 100px; /* Adjust the distance from the right edge */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); 
+    max-width: 400px;
+    max-height: 550px; /* Adjust the maximum height */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+    background-color: #eaf3fb;
+  }
+  
+  .chatbot-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .chatbot-messages {
+    flex-grow: 1;
+    width: 100%;
+    padding: 10px;
+    overflow-y: auto;
+    margin-top: 40px;
+  }
+  
+  .chatbot-input-container {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    background-color: #d9ecfe;
+  }
+  
+  .chatbot-input {
+    flex-grow: 1;
+    padding: 5px;
+  }
+  
+  .chatbot-send-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .close-button {
+    background-color: transparent; /* Remove background color */
+    color: red; /* Set the color to red */
+    border: none;
+    padding: 10px; /* Adjust padding as needed */
+    position: absolute;
+    right: 5px; /* Adjust the distance from the left edge */
+    cursor: pointer;
+    font-size: 29px; /* Adjust font size as needed */
+  }
+  
+  
+  .chatbot-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center modal content horizontally */
+    height: 700px; /* Set the modal height */
+    width: 400px; /* Set the modal width */
+    margin: auto; /* Center modal vertically */
+  }
+
+  .close-button:hover {
+    background-color: red;
+    color: white;
+  }
+  
+  
