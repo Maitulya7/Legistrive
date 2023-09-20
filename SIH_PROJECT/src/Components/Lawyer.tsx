@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import "../Components/style/Lawyer.css";
 import img from "../assets/lawyer-bg.svg";
 
@@ -8,7 +7,7 @@ function Lawyer() {
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [gender, setGender] = useState('');
+    const [, setGender] = useState('');
     const [state, setState] = useState('');
     const [city, setCity] = useState('');
     const [barCouncilId, setBarCouncilId] = useState('');
@@ -21,6 +20,7 @@ function Lawyer() {
     };
 
     return (
+      
         <div className="lawyer-container">
             <div className="lawyer-container-left">
                 <h1>Join Our Legal Network</h1>

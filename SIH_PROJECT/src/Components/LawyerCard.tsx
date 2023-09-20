@@ -1,5 +1,7 @@
 import React from "react";
 import "../Components/style/LawyearCard.css"; 
+import UserNavbar from "./UserNavbar"; 
+
 
 const LawyerCard = () => {
   // Dummy lawyer data
@@ -14,7 +16,9 @@ const LawyerCard = () => {
   };
 
   return (
-    <div className="lawyer-card">
+    <>  
+    <UserNavbar/>
+       <div className="lawyer-card">
       <div className="lawyer-card-header">
         <div className="lawyer-card-rating">
           Rating: {lawyerData.rating}
@@ -46,6 +50,8 @@ const LawyerCard = () => {
         </div>
       </div>
     </div>
+    </>
+   
   );
 };
 
