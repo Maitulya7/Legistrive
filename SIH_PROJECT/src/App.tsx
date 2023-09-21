@@ -7,6 +7,7 @@ import LawyerCard from './Components/LawyerCard';
 import MyOrder from './Components/TalkToLawyer/MyOrder';
 import Chatbot from './Components/Chatbot';
 import Dashboard from './Components/TalkToLawyer/Dashboard';
+import LawyerProfile from './Components/LawyerProfile';
 // import Register from './Components/register';
 // import Login from './Components/login';
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/LawyerCard" element={<LawyerCard/> } /> 
         <Route path="/my-order" element={<MyOrder/> } /> 
         <Route path="/Dashboard" element={<Dashboard/> } />
+        <Route path="/LawyerCard/:id" element={<LawyerProfile />} />
         {/* <Route
           path="/Lawyer"
           element={isAuthenticated ? <Lawyer /> : <Navigate to="/login" />}

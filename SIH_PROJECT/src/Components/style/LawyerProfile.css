@@ -1,0 +1,65 @@
+/* Add your CSS styles here */
+
+/* Update the profile pic */
+.profile-pic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 10px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #5a5554;
+    object-fit: cover;
+  }
+  
+  .btn-dark {
+    background-color: #f04800;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-dark:hover {
+    background-color: #2c3e50;
+  }
+  
+  /* Update the box styles */
+  .box {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    background-color: white;
+    box-shadow: 10px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Update the text-value style */
+  .text-value {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Update the name-style color */
+  .name-style {
+    color: #3f24c2;
+    font-size: 25px;
+  }
+  
+  /* Update the bio style */
+  .bio {
+    margin-top: 10px;
+  }
+  
