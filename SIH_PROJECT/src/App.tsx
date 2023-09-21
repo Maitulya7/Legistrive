@@ -4,6 +4,7 @@ import Home from './Components/Home';
 import "./App.css";
 import Lawyer from './Components/Lawyer';
 import LawyerCard from './Components/LawyerCard';
+import Chatbot from './Components/Chatbot';
 // import Register from './Components/register';
 // import Login from './Components/login';
 
@@ -16,6 +17,7 @@ function App() {
     setIsAuthenticated(phone_number !== null);
   }, []);
   return (
+    <div>
     <Router>
       <Routes>
         {/* <Route path="/login" element={<Login/>} /> */}
@@ -30,6 +32,8 @@ function App() {
         {/* <Route path="/LawyerCard" element={isAuthenticated ? <LawyerCard/> : <Navigate to="/login" />}/> */}
       </Routes>
     </Router>
+    <Chatbot />
+    </div>
   );
 }
 
