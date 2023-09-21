@@ -4,8 +4,8 @@ import Home from './Components/Home';
 import "./App.css";
 import Lawyer from './Components/Lawyer';
 import LawyerCard from './Components/LawyerCard';
-import Register from './Components/register';
-import Login from './Components/login';
+// import Register from './Components/register';
+// import Login from './Components/login';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -18,14 +18,16 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login/>} />
-        <Route path="/register" element={<Register />} />
+        {/* <Route path="/login" element={<Login/>} /> */}
+        {/* <Route path="/register" element={<Register />} /> */}
         <Route path="/" element={<Home/> } /> 
-        <Route
+        <Route path="/Lawyer" element={<Lawyer/> } /> 
+        <Route path="/LawyerCard" element={<LawyerCard/> } /> 
+        {/* <Route
           path="/Lawyer"
           element={isAuthenticated ? <Lawyer /> : <Navigate to="/login" />}
-        />
-        <Route path="/LawyerCard" element={isAuthenticated ? <LawyerCard/> : <Navigate to="/login" />}/>
+        /> */}
+        {/* <Route path="/LawyerCard" element={isAuthenticated ? <LawyerCard/> : <Navigate to="/login" />}/> */}
       </Routes>
     </Router>
   );

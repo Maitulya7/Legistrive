@@ -77,7 +77,7 @@ function Login() {
               onChange={handleChange}
             />
 
-            <button className="lo•••••••••gin-btn-login" onClick={handleSubmit}>
+            <button className="login-btn-login" onClick={handleSubmit}>
               Login
             </button>
           </div>
