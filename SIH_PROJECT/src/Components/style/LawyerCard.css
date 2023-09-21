@@ -1,0 +1,109 @@
+/* LawyerCard.css */
+
+/* Styles for the LawyerCard component */
+.lawyer-data {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .sidebar {
+    flex: 0 0 20%;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+  }
+  
+  .category-bar {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-top: 160px;
+    font-size: 15px;
+    width:350px;
+    font-size: 19px;
+    box-shadow: 1px 1px 5px 1px rgba(66, 103, 178, 0.1);
+    position: fixed;
+  }
+  
+  .category-bar select,
+  .category-bar label {
+    margin: 5px;
+    display: flex;
+    align-items: center; /* Align checkbox and label vertically */
+  }
+
+  .category-bar select {
+    background-color: #222;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    padding-right: 30px;
+    transition: background-color 0.3s ease; /* Add a smooth transition for background color */
+  }
+
+  .category-bar select:active {
+    background-color: #333; /* Change background color when clicked */
+    transition: background-color 0.3s ease; /* Add a smooth transition for background color */
+  }
+
+
+  .category-bar label{
+    margin: 6px;
+  }
+  
+  .category-bar label input[type="checkbox"] {
+    margin-right: 10px; 
+  }
+  
+  .divider-line {
+    width: 100%;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+  }
+  
+  .card-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .search-bar {
+    position: relative;
+    top: 200px;
+    left: 520px;
+  }
+  
+  .search-bar input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .search-bar button {
+    background-color: #4267B2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .user-navbar {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Additional styles for Lcard component, if needed */
+  

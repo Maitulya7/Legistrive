@@ -1,4 +1,4 @@
-import "../Components/style/LawyearCard.css"; 
+// import "../Components/style/LawyearCard.css"; 
 
 const Lcard = ({lawyerData}:any) => {
   console.log(lawyerData)
