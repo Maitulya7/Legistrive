@@ -1,33 +1,35 @@
-import "../Components/style/LawyerCard.css"; 
+import { Link } from "react-router-dom";
+import "../Components/style/LawyerCard.css";
 
-const Lcard = ({lawyerData}:any) => {
-  console.log(lawyerData)
+const Lcard = ({ lawyerData }: any) => {
+  console.log(lawyerData);
   return (
     <div className="lawyer-card">
       <div className="lawyer-card-header">
-        <div className="lawyer-card-rating">
-          Rating: 4
-        </div>
-        <div className="lawyer-card-reviews">
-          Review: 36
-        </div>
+        <div className="lawyer-card-rating">Rating: 4</div>
+        <div className="lawyer-card-reviews">Review: 36</div>
       </div>
       <div className="lawyer-card-content">
         <div className="lawyer-card-profile">
           {/* Add your lawyer's profile image here */}
         </div>
         <div className="lawyer-card-details">
-          <h2>{lawyerData.FIRSTNAME}</h2>
-          <p>{lawyerData.LOCATION}</p>
-          <p>Experience: {lawyerData.EXPERIENCE}</p>
-          <p className="languages-section">Languages: {lawyerData.LANGUAGES.join(", ")}</p> {/* Display languages */}
-          <div className="lawyer-card-skills">
-            {lawyerData.SPECIALITIES.map((skill:any, index:any) => (
-              <span key={index} className="skill-tag">
-                {skill}
-              </span>
-            ))}
-          </div>
+          <Link className="clickable-area" to={`/LawyerCard/${lawyerData.MOBILENUMBER}`}>
+            <h2>{lawyerData.FIRSTNAME}</h2>
+            <p>{lawyerData.LOCATION}</p>
+            <p>Experience: {lawyerData.EXPERIENCE}</p>
+            <p className="languages-section">
+              Languages: {lawyerData.LANGUAGES.join(", ")}
+            </p>{" "}
+            {/* Display languages */}
+            <div className="lawyer-card-skills">
+              {lawyerData.SPECIALITIES.map((skill: any, index: any) => (
+                <span key={index} className="skill-tag">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </Link>
           <div className="lawyer-card-options">
             <button className="call-button">Call</button>
             <button className="message-button">Message</button>

@@ -14,6 +14,7 @@ interface LawyerData {
   rating: number;
   reviews: number;
   LANGUAGES: string[];
+  MOBILENUMBER: string;
 }
 
 const LawyerCard: React.FC = () => {
@@ -194,11 +195,12 @@ const LawyerCard: React.FC = () => {
             <button onClick={() => onSearch(searchTerm)}>Search</button>
           </div>
 
-          <div className="lawyer-grid" style={{marginTop: "200px"}}>
-
-          {lawyerDataArray.map((lawyerData, index) => (
-            <Lcard lawyerData={lawyerData} />
-          ))}
+          <div className="lawyer-grid">
+            <div className="lawyer-card">
+            {lawyerDataArray.map((lawyerData, index) => (
+              <Lcard lawyerData={lawyerData} />
+            ))}
+            </div>
           </div>
         </div>
         <div>{selectedOptions}</div>

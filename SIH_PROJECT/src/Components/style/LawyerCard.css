@@ -118,5 +118,20 @@ th{
   padding: 15px; /* Adjust the padding to your preference */
 }
   
-  /* Additional styles for Lcard component, if needed */
+.lawyer-grid {
+  margin-top: 200px;
+
+  
+}
+
+.lawyer-card {
+  margin-top: 20px;
+  border: 2px solid #000;
+  padding: 10px;
+}
+
+.clickable-area {
+  color: inherit; /* Inherit text color from the parent element */
+  text-decoration: none; /* Remove underline */
+}
   
