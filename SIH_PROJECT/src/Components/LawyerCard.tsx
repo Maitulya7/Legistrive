@@ -194,9 +194,12 @@ const LawyerCard: React.FC = () => {
             <button onClick={() => onSearch(searchTerm)}>Search</button>
           </div>
 
-          {/* {lawyerDataArray.map((lawyerData, index) => (
+          <div className="lawyer-grid" style={{marginTop: "200px"}}>
+
+          {lawyerDataArray.map((lawyerData, index) => (
             <Lcard lawyerData={lawyerData} />
-          ))} */}
+          ))}
+          </div>
         </div>
         <div>{selectedOptions}</div>
       </div>
