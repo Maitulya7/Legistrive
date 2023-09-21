@@ -1,18 +1,21 @@
 import { useState, ChangeEvent, FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import img2 from "../assets/one.svg";
 import "../Components/style/loginstyle.css"
 
 interface FormData {
-  username: string;
+  phone_number: string;
   password: string;
 }
 
 function Login() {
   const [formData, setFormData] = useState<FormData>({
-    username: "",
-    password: "",
+    phone_number: localStorage.getItem("phoneNumber")||"",
+    password: localStorage.getItem("password")||"",
   });
+
+  const navigate=useNavigate();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -27,7 +30,7 @@ function Login() {
 
     //API LINK 
     try {
-      const response = await fetch("/api/login", {
+      const response = await fetch("http://localhost:3000/UserLogin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,7 +39,11 @@ function Login() {
       });
 
       if (response.ok) {
+        localStorage.setItem("phoneNumber",formData.phone_number);
+        localStorage.setItem("password",formData.password);
         console.log("Data stored successfully!");
+        navigate('/')
+
       } else {
         console.error("Failed to store data");
       }
@@ -57,9 +64,9 @@ function Login() {
           <div className="login-left-container-sub">
             <input
               type="text"
-              name="username"
-              placeholder="Username"
-              value={formData.username}
+              name="phone_number"
+              placeholder="phone number"
+              value={formData.phone_number}
               onChange={handleChange}
             />
             <input
@@ -89,7 +96,7 @@ function Login() {
           </div>
 
           <p className="login-sub-title-login">Not A Member? Register here!</p>
-          <Link className="login-register-btn" to="/">
+          <Link className="login-register-btn" to="/register">
             Register here!
           </Link>
         </div>

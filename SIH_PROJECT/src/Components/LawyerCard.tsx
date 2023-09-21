@@ -4,13 +4,13 @@ import Lcard from "./Lcard";
 import axios from "axios";
 
 interface LawyerData {
-  name: string;
-  address: string;
-  experience: string;
-  skills: string[];
+  FIRSTNAME: string;
+  LOCATION: string;
+  EXPERIENCE: string;
+  SPECIALITIES: string[];
   rating: number;
   reviews: number;
-  languages: string[];
+  LANGUAGES: string[];
 }
 
 const LawyerCard: React.FC = () => {
@@ -21,15 +21,39 @@ const LawyerCard: React.FC = () => {
   const [lawyerDataArray, setLawyerDataArray] = useState<LawyerData[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const lawyerData: LawyerData = {
-    name: "John Doe",
-    address: "123 Main St, City",
-    experience: "5 years",
-    skills: ["Divorce", "Child Custody", "Mediation"],
-    rating: 4.5,
-    reviews: 27,
-    languages: ["English", "Spanish"],
+
+
+  //Retrive LawyerData
+  const fetchAllData = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/getLawyersFeed", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        }
+      });
+
+      if (response.ok) {
+        const lawyerData = await response.json();
+        // Now you have the lawyerData in the state
+
+        setLawyerDataArray(lawyerData);
+    
+      } else {
+        console.error("Failed to fetch lawyer data:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
+
+  // Call the fetchData function to retrieve lawyer data when needed
+  useEffect(() => {
+    // Call the fetchData function to retrieve lawyer data when the component mounts
+    fetchAllData();
+  }, []); 
+
+
 
   const problemCategory = [
     "Family Law",
@@ -101,12 +125,14 @@ const LawyerCard: React.FC = () => {
       setDoFilter(false);
 
       const filterAPIUrl = "http://localhost:3000/filterLawyer";
+      console.log(filterAPIUrl);
 
       const fetchData = async () => {
         try {
           const response = await axios.post(filterAPIUrl, requestBody);
           const updatedLawyerDataArray = response.data; // Assuming API response is an array of LawyerData
-          setLawyerDataArray(updatedLawyerDataArray); // Update the array with fetched data
+          setLawyerDataArray(updatedLawyerDataArray);// Update the array with fetched data
+         
           console.log("updated Lawyer Data: ", updatedLawyerDataArray);
         } catch (error) {
           console.error("Error while fetching data:", error);
@@ -168,9 +194,10 @@ const LawyerCard: React.FC = () => {
           <button onClick={() => onSearch(searchTerm)}>Search</button>
         </div>
 
-        {/* {lawyerDataArray.map((lawyerData, index) => (
-      ))}  */}
-        {/* <Lcard lawyerData={lawyerData} /> */}
+        {lawyerDataArray.map((lawyerData, index) => (
+           <Lcard lawyerData={lawyerData} /> 
+      ))} 
+        
       </div>
       <div>{selectedOptions}</div>
     </div>

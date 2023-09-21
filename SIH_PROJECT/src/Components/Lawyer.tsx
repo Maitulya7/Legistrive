@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import "../Components/style/Lawyer.css";
 import img from "../assets/lawyer-bg.svg";
 
