@@ -1,7 +1,7 @@
 export const UserMenuitems = [
   {
     title: "Dashboard",
-    url: "/",
+    url: "/Dashboard",
     cName: "user-nav-links ",
     icon: "fa-solid fa-house-user"
   },

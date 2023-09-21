@@ -4,7 +4,8 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 110vh; /* Set the height to 100vh for full viewport height */
+    margin: 0; /* Remove margin to remove extra space */
     background-color: #fff;
 }
 
@@ -30,8 +31,8 @@
     flex: 1;
     padding: 1rem 5rem 5rem 5rem; /* Add padding to create space around the form */
     background-color: #fff;
-    border: 1px solid #e0e0e0;
-    height: 100vh;
+    border-left: 1px solid #e0e0e0;
+    height: 110vh;
     border-radius: 5px;
 }
 
@@ -61,7 +62,6 @@
 }
 .gender{
     font-weight: 700;
-    padding-bottom: 10px;
 }
 
 /* Input fields style */
@@ -162,6 +162,12 @@
 /* Hide the "No file chosen" text when a file is selected */
 .custom-file-upload input[type="file"]:valid + .file-name {
     display: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    margin-top: 20px; /* Add margin as needed */
 }
 
 /* Button style */

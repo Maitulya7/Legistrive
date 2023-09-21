@@ -1,43 +1,26 @@
-import "../Components/style/Herostyle.css"
-import heroTop from "../assets/hero-top.svg";
-import heroBottom from "../assets/hero-bottom.svg"
-import heroBg from "../assets/hero-bg.png"
+// HeroComponent.js
+import React from "react";
+import "../Components/style/Herostyle.css"; // Import your CSS file
 import { Link } from "react-router-dom";
 
 
-function Hero(){
-    return(
-        <>
-        <div className="Hero">
-            <h1 className="hero-title">Welcome To Legistrive !</h1>
-            <p>The journey to owning a property is a significant milestone in one's life, often representing a dream come true. However, navigating the complex and ever-changing real estate landscape can be daunting.</p>
-            <img alt="img" src={heroBg}/>
-
-            <Link className="Hero-btn" to={"./LawyerCard"}>Talk To Lawyer</Link>
-        </div>
-        <div className="one">
-
-        </div>
-
-        <div className="hero-container-top">
-            <img alt="hero-top" src={heroTop}/>
-            <div className="hero-container-top-sub">
-                <p>The journey to owning a property is a significant milestone in one's life, often representing a dream come true. However, navigating the complex and ever-changing real estate landscape can be daunting.</p>
-                <button>Get Started</button>
-            </div>
-            
-        </div>
-
-        <div className="hero-container-bottom">
-            <img alt="hero-bottom" src={heroBottom}/>
-            <div className="hero-container-bottom-sub">
-            <p>The journey to owning a property is a significant milestone in one's life, often representing a dream come true. However, navigating the complex and ever-changing real estate landscape can be daunting.</p>
-                <button>Get Started</button>
-            </div>
-            
-        </div>
-        </>
-    )
+function HeroComponent() {
+  return (
+    <div className="hero-container">
+      <div className="hero-content">
+        <h1 className="hero-title">Welcome To Legistrive!</h1>
+        <p>
+          The journey to owning a property is a significant milestone in one's
+          life, often representing a dream come true. However, navigating the
+          complex and ever-changing real estate landscape can be daunting.
+        </p>
+        <Link className="hero-btn" to={"./LawyerCard"}>
+          Talk To Lawyer
+        </Link>
+        
+      </div>
+    </div>
+  );
 }
 
-export default Hero;
+export default HeroComponent;

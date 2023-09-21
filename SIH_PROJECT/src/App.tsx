@@ -5,6 +5,7 @@ import "./App.css";
 import Lawyer from './Components/Lawyer';
 import LawyerCard from './Components/LawyerCard';
 import Chatbot from './Components/Chatbot';
+import Dashboard from './Components/TalkToLawyer/Dashboard';
 // import Register from './Components/register';
 // import Login from './Components/login';
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/" element={<Home/> } /> 
         <Route path="/Lawyer" element={<Lawyer/> } /> 
         <Route path="/LawyerCard" element={<LawyerCard/> } /> 
+        <Route path="/Dashboard" element={<Dashboard/> } /> 
         {/* <Route
           path="/Lawyer"
           element={isAuthenticated ? <Lawyer /> : <Navigate to="/login" />}
