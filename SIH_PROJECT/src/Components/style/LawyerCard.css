@@ -77,7 +77,7 @@
   .search-bar {
     position: relative;
     top: 160px;
-    left: 520px;
+    left: 971px;
   }
   
   .search-bar input[type="text"] {
@@ -119,9 +119,10 @@ th{
 }
   
 .lawyer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns in a row */
+  gap: 20px; /* Gap between grid items */
   margin-top: 200px;
-
-  
 }
 
 .lawyer-card {
