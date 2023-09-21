@@ -1,5 +1,4 @@
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -91,72 +90,71 @@
   .lawyer-card {
     width: 90%;
     max-width: none; /* Remove max-width restriction */
+  }
+  .lawyer-data {
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    padding: 3%;
+    justify-content: space-between;
+  }
 
-.lawyer-data {
-  background-color: #f2f2f2;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  padding: 3%;
-  justify-content: space-between;
-}
+  .category-bar {
+    background-color: white;
+    padding: 1%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
 
-.category-bar {
-  background-color: white;
-  padding: 1%;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
+  .category-bar label {
+    display: flex; /* Make labels a flex container */
+    align-items: center; /* Center items vertically (optional) */
+    margin-bottom: 8px; /* Add spacing between options */
+  }
 
-.category-bar label {
-  display: flex; /* Make labels a flex container */
-  align-items: center; /* Center items vertically (optional) */
-  margin-bottom: 8px; /* Add spacing between options */
-}
+  .category-bar input[type="checkbox"] {
+    margin-right: 8px; /* Add right margin for the gap */
+  }
 
-.category-bar input[type="checkbox"] {
-  margin-right: 8px; /* Add right margin for the gap */
-}
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    width: 800px;
+  }
 
-.search-bar {
-  display: flex;
-  align-items: center;
-  background-color: #f0f0f0;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  width: 800px;
-}
+  input[type="text"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+  }
 
-input[type="text"] {
-  flex: 1;
-  border: none;
-  outline: none;
-  padding: 10px;
-  border-radius: 5px;
-}
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  margin-left: 10px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+  button:hover {
+    background-color: #0056b3;
+  }
 
-button:hover {
-  background-color: #0056b3;
-}
+  .divider-line {
+    margin: 20px 0; /* Adjust the margin as needed */
+    border: 1px solid #ccc; /* Add border styling */
+  }
 
-
-.divider-line {
-  margin: 20px 0; /* Adjust the margin as needed */
-  border: 1px solid #ccc; /* Add border styling */
-}
-
-.lawyer-card {
+  .lawyer-card {
     background-color: white;
     border: 1px solid #ccc;
     padding: 16px;
@@ -166,7 +164,6 @@ button:hover {
     display: flex;
     flex-direction: column;
     border-radius: 5px;
-
   }
 
   /* Stack content on top of each other for smaller screens */
@@ -183,7 +180,7 @@ button:hover {
   .lawyer-card-details {
     flex: 1;
   }
-  
+
   .skill-tag {
     background-color: #007bff;
     color: white;
@@ -193,28 +190,24 @@ button:hover {
     margin-bottom: 4px;
   }
 }
-  
-  /* Add media query for smaller screens */
-  @media screen and (max-width: 768px) {
-    .lawyer-card {
-      width: 90%; /* Adjust card width for smaller screens */
-      max-width: none; /* Remove max-width restriction */
-    }
-  
-    .lawyer-card-content {
-      flex-direction: column; /* Stack content on top of each other for smaller screens */
-    }
-  
-    .lawyer-card-profile {
-      margin-right: 0; /* Remove margin for profile image on smaller screens */
-      margin-bottom: 12px; /* Add margin below profile image on smaller screens */
-    }
 
-    .search-bar {
-      width: 500px;
-    }
+/* Add media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .lawyer-card {
+    width: 90%; /* Adjust card width for smaller screens */
+    max-width: none; /* Remove max-width restriction */
   }
 
+  .lawyer-card-content {
+    flex-direction: column; /* Stack content on top of each other for smaller screens */
+  }
 
-  
+  .lawyer-card-profile {
+    margin-right: 0; /* Remove margin for profile image on smaller screens */
+    margin-bottom: 12px; /* Add margin below profile image on smaller screens */
+  }
 
+  .search-bar {
+    width: 500px;
+  }
+}
