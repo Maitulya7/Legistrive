@@ -1,4 +1,3 @@
-// src/components/Chatbot.tsx
 import React, { useState } from "react";
 import Modal from "react-modal";
 import Message from "./Message";
@@ -20,10 +19,40 @@ const Chatbot: React.FC = () => {
     setInputText(e.target.value);
   };
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (inputText.trim() === "") return;
-    setMessages([...messages, { text: inputText, isUserMessage: true }]);
+
+    // Create a new message and add it to the state
+    const newUserMessage = { text: inputText, isUserMessage: true };
+    setMessages([...messages, newUserMessage]);
     setInputText("");
+
+    try {
+      // Make a POST request to your API endpoint with the user's message
+      const response = await fetch("http://localhost:3000/botResponse", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message: inputText }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send the message");
+      }
+
+      const responseData = await response.json();
+
+      const botReplyMessage = {
+        text: responseData.data,
+        isUserMessage: false,
+      };
+
+      // Create a new array that includes both the previous messages and the new bot response
+      setMessages((prevMessages) => [...prevMessages, botReplyMessage]);
+    } catch (error) {
+      console.error("Error sending/receiving messages:", error);
+    }
   };
 
   const handleInputKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
