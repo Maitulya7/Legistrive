@@ -103,6 +103,20 @@
     text-align: center;
     font-weight: bold;
   }
+
+.row-box {
+  background-color: #fff; /* Background color of the box */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Box shadow effect */
+  border-radius: 4px; /* Rounded corners for the box */
+}
+
+.row-box td {
+  padding: 10px;
+}
+
+th{
+  padding: 15px; /* Adjust the padding to your preference */
+}
   
   /* Additional styles for Lcard component, if needed */
   
