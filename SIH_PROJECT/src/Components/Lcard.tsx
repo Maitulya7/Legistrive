@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "../Components/style/LawyerCard.css";
 
 const Lcard = ({ lawyerData }: any) => {
-  console.log(lawyerData);
+  // console.log(lawyerData);
   return (
     <div className="lawyer-card">
       <div className="lawyer-card-header">

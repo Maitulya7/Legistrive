@@ -1,6 +1,5 @@
 :root {
     --primary-color: #4267B2;
-    --secondary-color: #7AD044;
     --sub-title-color: #555;
   }
   
@@ -58,7 +57,7 @@
   
   input[type="text"],
   input[type="password"] {
-    width: 100%;
+    /* width: 100%; */
     border: 1px solid #ccc;
     font-size: 16px;
     transition: border-color 0.3s, box-shadow 0.3s;

@@ -43,6 +43,7 @@ function Login() {
         localStorage.setItem("password",formData.password);
         console.log("Data stored successfully!");
         navigate('/')
+        window.location.reload();
 
       } else {
         console.error("Failed to store data");
