@@ -137,3 +137,167 @@ box-shadow: 1px 1px 5px 1px rgba(66, 103, 178, 0.5);
 color: inherit; /* Inherit text color from the parent element */
 text-decoration: none; /* Remove underline */
 }
+
+
+.card-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  color: #000000;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.card-modal-content {
+  padding: 20px;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+  width: 600px;
+  max-width: 900px; /* Set a maximum width for the modal content */
+  margin: 5% auto auto auto ; /* Center the modal content horizontally */
+  position: relative;
+  transform: scale(1);
+  transition: transform 0.1s ease;
+}
+
+.card-modal-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 20px;
+  color: #444;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-close:hover {
+  /* background-color: #ff3838; */
+  scale: 1.5;
+}
+
+.card-modal-content input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.scroll {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.scroll::-webkit-scrollbar{
+  display: none;
+}
+
+.card-modal-content button.btn {
+  padding: 7px 20px;
+  background-color: #7352FF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+  margin-top: 5%;
+}
+
+.card-modal-content button.btn:hover {
+  background-color: #3c2994;
+}
+
+@media screen and (max-width: 600px) {
+  .circular-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .buttons-container button {
+    margin: 5px;
+  }
+}
+
+.add-employee-button {
+background-color: transparent;
+color: #000000;
+border: 1px solid #000000;
+padding: 8px 20px;
+border-radius: 5px;
+cursor: pointer;
+transition: color 0.1s, border-color 0.2s;
+}
+
+/* Define the styles for the button on hover */
+.add-employee-button:hover {
+color: #7352ff;
+border-color: #7352ff;
+}
+
+.employee-search-bar {
+width: 40%;
+}
+
+/* Add these styles to your CSS file */
+.custom-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('https://cdn2.iconfinder.com/data/icons/essential-web-1/50/dropdown_arrow-512.png'); /* Custom dropdown arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  cursor: pointer;
+}
+
+/* Style the select boxes on hover/focus */
+.custom-select:hover,
+.custom-select:focus {
+  border-color: #007bff; /* Change the border color on hover/focus */
+}
+
+/* Style the select options */
+.custom-select option {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Adjust the font size for the label */
+.select-container label {
+  font-size: 18px;
+}
+
+/* Add any additional styling as needed */

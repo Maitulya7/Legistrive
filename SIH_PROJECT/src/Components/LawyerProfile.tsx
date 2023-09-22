@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'; 
+import toast from 'react-hot-toast';
+import { useParams } from 'react-router-dom';
 import './style/LawyerProfile.css';
 
 interface WorkerInfo {
@@ -58,35 +59,48 @@ const Dashboard: React.FC = () => {
     console.log('click')
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here, e.g., send the data to the server
-    // You can access the input values as serviceCategory, serviceDescription, and isPrivate
-    // After submitting, you may want to close the modal
-    closeModal();
-  };
-
-  const BookLawyer = async () => {
+    
     try {
-      const response = await fetch('http://localhost:3000/getLawyerData', {
+      const CUSTOMER_MOBILENUMBER = localStorage.getItem('phoneNumber') ;
+      // localStorage.getItem('phonenumber')
+      if (!CUSTOMER_MOBILENUMBER) {
+        console.error('Customer mobile number not found in local storage.');
+        return;
+      }
+      
+      const requestBody = {
+        CUSTOMER_MOBILENUMBER,
+        LAWYER_MOBILENUMBER: currWorker?.MOBILENUMBER,
+        SERVICE_CHARGE: currWorker?.SERVICE_CHARGE,
+        SERVICE_CATEGORY: serviceCategory,
+        SERVICE_DESCRIPTION: serviceDescription,
+      };
+  
+      // Send the POST request to book the lawyer
+      const response = await fetch('http://localhost:3000/bookLawyer', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ MOBILENUMBER: id }), // Use user email as MOBILENUMBER
+        body: JSON.stringify(requestBody),
       });
-
+  
       if (response.ok) {
-        const data = await response.json();
-        setCurrWorker(data.data);
-        console.log(data.data);
+        toast.success('Query saved successfully');
+        console.log('Query saved successfully');
+        
+        // Close the modal and reset input fields
+        closeModal();
       } else {
-        console.error('Failed to fetch lawyer data:', response.statusText);
+        console.error('Failed to save query:', response.statusText);
       }
     } catch (error) {
       console.error('Error:', error);
     }
   };
+  
 
   useEffect(() => {
     fetchData();
@@ -171,47 +185,65 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
       </div>
+
       {isModalOpen && (
-      <div className="modal" style={{backgroundColor: "black"}}>
-        <div className="modal-content">
-          <span className="close" onClick={closeModal}>
-            &times;
-          </span>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="serviceCategory">Service Category:</label>
+        <div className="card-modal scroll">
+          <div className="card-modal-content">
+            <span className="card-close" onClick={closeModal}>
+              &times;
+            </span>
+            <h2>Send Your Query</h2>
+            <div className='card-modal-row'>
+              <div className="select-container">
+                <label htmlFor="serviceCategory">Service Category:</label>
+                <select
+                  id="serviceCategory"
+                  value={serviceCategory}
+                  onChange={(e) => setServiceCategory(e.target.value)}
+                  className="custom-select" // Add a custom-select class for styling
+                >
+                  <option value="">Select Service Category</option>
+                  <option value="Family Law">Family Law</option>
+                  <option value="Criminal Defense">Criminal Defense</option>
+                  <option value="Divorce & Child Custody">Divorce & Child Custody</option>
+                  <option value="Property & Real Estate">Property & Real Estate</option>
+                  <option value="Employment Issues">Employment Issues</option>
+                  <option value="Consumer Protection">Consumer Protection</option>
+                  <option value="Civil Matters">Civil Matters</option>
+                  <option value="Cyber Crime">Cyber Crime</option>
+                  <option value="Company & Start-Ups">Company & Start-Ups</option>
+                  <option value="Other Legal Problem">Other Legal Problem</option>
+                </select>
+              </div>
+              <div className="select-container">
+                <label htmlFor="isPrivate">Is Private:</label>
+                <select
+                  id="isPrivate"
+                  value={isPrivate}
+                  onChange={(e) => setIsPrivate(e.target.value)}
+                  className="custom-select" // Add a custom-select class for styling
+                >
+                  <option value="">Select Is Private</option>
+                  <option value="true">True</option>
+                  <option value="false">False</option>
+                </select>
+              </div>
+            </div>
+            <p>
+              Service Description:
               <input
                 type="text"
-                id="serviceCategory"
-                value={serviceCategory}
-                onChange={(e) => setServiceCategory(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="serviceDescription">Service Description:</label>
-              <textarea
-                id="serviceDescription"
                 value={serviceDescription}
                 onChange={(e) => setServiceDescription(e.target.value)}
-                required
               />
-            </div>
-            <div className="form-group">
-              <label htmlFor="isPrivate">Is Private:</label>
-              <input
-                type="text"
-                id="isPrivate"
-                value={isPrivate}
-                onChange={(e) => setIsPrivate(e.target.value)}
-                required
-              />
-            </div>
-            <button type="submit">Submit</button>
-          </form>
+            </p>
+            <button className="btn" onClick={handleSubmit}>
+              Save
+            </button>
+          </div>
         </div>
-      </div>
-    )}
+      )}
+
     </div>
   );
 };
