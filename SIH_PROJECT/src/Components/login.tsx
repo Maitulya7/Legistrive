@@ -2,7 +2,9 @@ import { useState, ChangeEvent, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import img2 from "../assets/one.svg";
-import "../Components/style/loginstyle.css"
+import "../Components/style/loginstyle.css";
+import { TextField } from "@mui/material";
+import { Button } from "@mui/material";
 
 interface FormData {
   phone_number: string;
@@ -11,11 +13,11 @@ interface FormData {
 
 function Login() {
   const [formData, setFormData] = useState<FormData>({
-    phone_number: localStorage.getItem("phoneNumber")||"",
-    password: localStorage.getItem("password")||"",
+    phone_number: localStorage.getItem("phoneNumber") || "",
+    password: localStorage.getItem("password") || "",
   });
 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -28,7 +30,7 @@ function Login() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    //API LINK 
+    //API LINK
     try {
       const response = await fetch("http://localhost:3000/UserLogin", {
         method: "POST",
@@ -43,9 +45,8 @@ function Login() {
         localStorage.setItem("password", formData.password);
         localStorage.setItem("isLawyer", "false");
         console.log("Data stored successfully!");
-        navigate('/')
+        navigate("/");
         window.location.reload();
-
       } else {
         console.error("Failed to store data");
       }
@@ -60,28 +61,47 @@ function Login() {
         <div className="login-left-container">
           <h1>Welcome back!</h1>
           <p className="login-top-title">
-            Legistrive: Bridging the Gap Between Legal Talent and Opportunities, One Connection at a Time.
+            Legistrive: Bridging the Gap Between Legal Talent and Opportunities,
+            One Connection at a Time.
           </p>
 
           <div className="login-left-container-sub">
-            <input
+            <TextField
+              className="login-input"
+              label="Phone Number"
+              variant="outlined"
               type="text"
               name="phone_number"
-              placeholder="phone number"
               value={formData.phone_number}
               onChange={handleChange}
+              style={{ marginBottom: "15px" }}
             />
-            <input
+            <TextField
+              className="login-input"
+              label="Password"
+              variant="outlined"
               type="password"
               name="password"
-              placeholder="Password"
               value={formData.password}
               onChange={handleChange}
             />
 
-            <button className="login-btn-login" onClick={handleSubmit}>
+            <Button
+              className="login-btn-login"
+              variant="contained"
+              onClick={handleSubmit}
+              style={{
+                backgroundColor: "#4267B2",
+                fontWeight:"bold",
+                fontSize:"15px",
+                color: "#fff",
+                marginTop: "10px",
+                textDecoration: "none",
+                height:"50px",
+              }}
+            >
               Login
-            </button>
+            </Button>
           </div>
 
           <span className="login-text">Or Continue With</span>
