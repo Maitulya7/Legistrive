@@ -13,7 +13,7 @@ export const UserMenuitems = [
   },
   {
     title: "Ask A Lawyer",
-    url: "/ask-a-lawyer",
+    url: "/LawyerCard",
     cName: "user-nav-links ",
     icon: "fa-solid fa-briefcase"
   },
