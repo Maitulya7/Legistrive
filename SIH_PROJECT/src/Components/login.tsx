@@ -64,7 +64,6 @@ function Login() {
             Legistrive: Bridging the Gap Between Legal Talent and Opportunities,
             One Connection at a Time.
           </p>
-
           <div className="login-left-container-sub">
             <TextField
               className="login-input"
@@ -92,18 +91,17 @@ function Login() {
               onClick={handleSubmit}
               style={{
                 backgroundColor: "#4267B2",
-                fontWeight:"bold",
-                fontSize:"15px",
+                fontWeight: "bold",
+                fontSize: "15px",
                 color: "#fff",
                 marginTop: "10px",
                 textDecoration: "none",
-                height:"50px",
+                height: "50px",
               }}
             >
               Login
             </Button>
           </div>
-
           <span className="login-text">Or Continue With</span>
           <div className="login-icons">
             <div className="icon">
@@ -116,11 +114,31 @@ function Login() {
               <i className="fa-brands fa-facebook"></i>
             </div>
           </div>
-
           <p className="login-sub-title-login">Not A Member? Register here!</p>
-          <Link className="login-register-btn" to="/register">
+          <Button
+            className="login-register-btn"
+            component={Link}
+            to="/register"
+            variant="contained"
+            style={{
+              backgroundColor: "#7AD044",
+              fontWeight: "bold",
+              fontSize: "15px",
+              color: "#fff",
+              marginTop: "10px",
+              textDecoration: "none",
+              width: "100%",
+              height: "50px",
+              transition: "background-color 0.3s", // Add transition for smoother hover effect
+            }}
+            classes={{ focusVisible: "focus-visible" }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.backgroundColor = "#6BBE3E"; 
+            }}
+          >
             Register here!
-          </Link>
+          </Button>
+          
         </div>
 
         <div className="login-container-right"></div>

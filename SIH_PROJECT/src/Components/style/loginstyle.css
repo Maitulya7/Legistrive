@@ -122,27 +122,9 @@
   font-weight: bold;
 }
 
-.login-register-btn {
- display: flex;
- justify-content: center;
- align-items: center;
-  background-color: var(--secondary-color);
-  color: #fff;
-  border: none;
-  font-size: 18px;
-  font-weight: 600;
-  margin-top: 15px;
-  cursor: pointer;
-  height: 50px;
-  width: 100%;
-  text-align: center;
-  text-decoration: none;
-}
 
-.register-btn:hover {
-  text-decoration: none;
-  border: 2px solid #555;
-}
+
+
 
 @media screen and (max-width: 768px) {
   .login-container {
