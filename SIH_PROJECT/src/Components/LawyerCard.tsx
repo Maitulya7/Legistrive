@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import Lcard from "./Lcard";
 import axios from "axios";
 import UserNavbar from "./UserNavbar";
-import "../Components/style/LawyerCard.css"
-
-
+import "../Components/style/LawyerCard.css";
 
 interface LawyerData {
   FIRSTNAME: string;
@@ -108,7 +106,8 @@ const LawyerCard: React.FC = () => {
   };
 
   const onSearch = (query: string) => {
-    console.log(query);
+    setSearchTerm(query);
+    setDoFilter(true);
   };
 
   useEffect(() => {
@@ -124,7 +123,7 @@ const LawyerCard: React.FC = () => {
       setDoFilter(false);
 
       const filterAPIUrl = "http://localhost:3000/filterLawyer";
-      console.log(filterAPIUrl);
+      console.log(requestBody);
 
       const fetchData = async () => {
         try {
@@ -188,20 +187,18 @@ const LawyerCard: React.FC = () => {
           <div className="search-bar">
             <input
               type="text"
-              placeholder="Search..."
+              placeholder="Recommend..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <button onClick={() => onSearch(searchTerm)}>Search</button>
+            <button onClick={() => onSearch(searchTerm)}>Go</button>
           </div>
           <div className="lawyer-grid">
-  {lawyerDataArray.map((lawyerData, index) => (
-    <Lcard key={index} lawyerData={lawyerData} />
-  ))}
-</div>
-
+            {lawyerDataArray.map((lawyerData, index) => (
+              <Lcard key={index} lawyerData={lawyerData} />
+            ))}
+          </div>
         </div>
-        <div>{selectedOptions}</div>
       </div>
     </>
   );

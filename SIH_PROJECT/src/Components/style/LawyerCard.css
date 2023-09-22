@@ -2,137 +2,136 @@
 
 /* Styles for the LawyerCard component */
 .lawyer-data {
-    display: flex;
-    padding: 20px;
-  }
-  
-  .sidebar {
-    flex: 0 0 20%;
-    background-color: #f5f5f5;
-    padding: 10px;
-    border-right: 1px solid #ddd;
-    display: flex;
-    flex-direction: column; /* Arrange items vertically */
-  }
-  
-  .category-bar {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    margin-left: 20px;
-    margin-top: 160px;
-    font-size: 13px;
-    width:280px;
-    box-shadow: 1px 1px 5px 1px rgba(66, 103, 178, 0.5);
-    position: fixed;
-  }
-  
-  .category-bar select,
-  .category-bar label {
-    margin: 5px;
-    display: flex;
-    align-items: center; /* Align checkbox and label vertically */
-  }
+  display: flex;
+  padding: 20px;
+}
 
-  .category-bar select {
-    background-color: #222;
-    color: #fff;
-    font-size: 15px;
-    padding: 10px;
-    text-align: center;
-    padding-right: 30px;
-    transition: background-color 0.3s ease; /* Add a smooth transition for background color */
-  }
+.sidebar {
+  flex: 0 0 20%;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+}
 
-  .category-bar select:active {
-    background-color: #333; /* Change background color when clicked */
-    transition: background-color 0.3s ease; /* Add a smooth transition for background color */
-  }
+.category-bar {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-top: 175px;
+  font-size: 13px;
+  width:280px;
+  box-shadow: 1px 1px 5px 1px rgba(66, 103, 178, 0.5);
+  position: fixed;
+}
+
+.category-bar select,
+.category-bar label {
+  margin: 5px;
+  display: flex;
+  align-items: center; /* Align checkbox and label vertically */
+}
+
+.category-bar select {
+  background-color: #222;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px;
+  text-align: center;
+  padding-right: 30px;
+  transition: background-color 0.3s ease; /* Add a smooth transition for background color */
+}
+
+.category-bar select:active {
+  background-color: #333; /* Change background color when clicked */
+  transition: background-color 0.3s ease; /* Add a smooth transition for background color */
+}
 
 
-  .category-bar label{
-    margin: 6px;
-  }
-  
-  .category-bar label input[type="checkbox"] {
-    margin-right: 10px; 
-  }
-  
-  .divider-line {
-    width: 100%;
-    border: 1px solid #ddd;
-    margin: 10px 0;
-  }
-  
-  .card-area {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-  }
-  
-  .search-bar {
-    position: relative;
-    top: 160px;
-    left: 971px;
-  }
-  
-  .search-bar input[type="text"] {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .search-bar button {
-    background-color: #4267B2;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  
-  .user-navbar {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    font-weight: bold;
-  }
+.category-bar label{
+  margin: 6px;
+}
+
+.category-bar label input[type="checkbox"] {
+  margin-right: 10px; 
+}
+
+.divider-line {
+  width: 100%;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+.card-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.search-bar {
+  position: relative;
+  top: 175px;
+  left: 971px;
+}
+
+.search-bar input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  background-color: #4267B2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.user-navbar {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: bold;
+}
 
 .row-box {
-  background-color: #fff; /* Background color of the box */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Box shadow effect */
-  border-radius: 4px; /* Rounded corners for the box */
+background-color: #fff; /* Background color of the box */
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Box shadow effect */
+border-radius: 4px; /* Rounded corners for the box */
 }
 
 .row-box td {
-  padding: 10px;
+padding: 10px;
 }
 
 th{
-  padding: 15px; /* Adjust the padding to your preference */
+padding: 15px; /* Adjust the padding to your preference */
 }
-  
+
 .lawyer-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three columns in a row */
-  gap: 20px; /* Gap between grid items */
-  margin-top: 200px;
+display: grid;
+grid-template-columns: repeat(3, 1fr); /* Three columns in a row */
+gap: 20px; /* Gap between grid items */
+margin-top: 240px;
 }
 
 .lawyer-card {
-  margin-top: 20px;
-  border: 2px solid #000;
-  padding: 10px;
+margin-top: 35px;
+border: 2px solid #000;
+padding: 10px;
 }
 
 .clickable-area {
-  color: inherit; /* Inherit text color from the parent element */
-  text-decoration: none; /* Remove underline */
+color: inherit; /* Inherit text color from the parent element */
+text-decoration: none; /* Remove underline */
 }
-  
