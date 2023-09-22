@@ -39,8 +39,9 @@ function Login() {
       });
 
       if (response.ok) {
-        localStorage.setItem("phoneNumber",formData.phone_number);
-        localStorage.setItem("password",formData.password);
+        localStorage.setItem("phoneNumber", formData.phone_number);
+        localStorage.setItem("password", formData.password);
+        localStorage.setItem("isLawyer", "false");
         console.log("Data stored successfully!");
         navigate('/')
         window.location.reload();

@@ -3,6 +3,7 @@ import axios from '../Axios';
 import toast from 'react-hot-toast';
 import "../Components/style/Lawyer.css";
 import img from "../assets/lawyer-bg.svg";
+import { useNavigate } from 'react-router';
 
 function Lawyer() {
     const [firstName, setFirstName] = useState('');
@@ -15,14 +16,18 @@ function Lawyer() {
     const [barCouncilId, setBarCouncilId] = useState('');
     const [idNumber, setIdNumber] = useState('');
     const [year, setYear] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        const phoneNumber = localStorage.getItem('phoneNumber');
+
         const requestData = {
             FIRSTNAME: firstName,
             LASTNAME: lastName,
             PASSWORD: password,
-            MOBILENUMBER: '9090909087',
+            MOBILENUMBER: phoneNumber,
             EMAIL: email,
             GENDER: 'Male',
             STATE: state,
@@ -35,8 +40,10 @@ function Lawyer() {
         try {
             const response = await axios.post('/lawyerSignup', requestData);
             if (response.status === 201) {
+                localStorage.setItem('isLawyer', 'true');
                 toast.success('Congratulations, your data is sent to apply as Lawyer')
                 console.log('Signup successful:', response.data);
+                navigate("/");
             } else {
                 console.error('Unexpected status code:', response.status);
             }

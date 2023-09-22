@@ -22,16 +22,12 @@
 }
 
 
-.user-logo-and-name {
-  color: #222;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
 
 /* Updated class names */
 .user-logo-and-name i {
   margin: 0 0.7rem 0 0;
   color: var(--primary-color);
+  text-decoration: none;
 }
 
 /* Updated class names */

@@ -20,9 +20,11 @@ class UserNavbar extends Component {
         {/* First Row: Logo and User Profile */}
         <div className="user-top-row"> {/* Updated class name */}
           <div className="user-logo-and-name"> {/* Updated class name */}
+          <Link to={"http://localhost:5173"}>
             <h1 className="user-navbar-logo"> {/* Updated class name */}
               <i className="fa-solid fa-scale-balanced"></i>Legistrive
             </h1>
+          </Link>
           </div>
           <div className="user-user-profile"> {/* Updated class name */}
             <div className="user-user-info"> {/* Updated class name */}
