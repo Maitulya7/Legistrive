@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route,  } from 'react-router-dom';
 import Home from './Components/Home';
 import "./App.css";
 import Lawyer from './Components/Lawyer';
@@ -9,10 +9,12 @@ import Chatbot from './Components/Chatbot';
 import Dashboard from './Components/TalkToLawyer/Dashboard';
 import LawyerProfile from './Components/LawyerProfile';
 // import Register from './Components/register';
-// import Login from './Components/login';
+import Login from './Components/login';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
+
+  
 
 
   useEffect(() => {
@@ -23,7 +25,7 @@ function App() {
     <div>
     <Router>
       <Routes>
-        {/* <Route path="/login" element={<Login/>} /> */}
+        <Route path="/login" element={<Login/>} />
         {/* <Route path="/register" element={<Register />} /> */}
         <Route path="/" element={<Home/> } /> 
         <Route path="/Lawyer" element={<Lawyer/> } /> 
