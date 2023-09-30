@@ -26,7 +26,7 @@ const LawyerCard: React.FC = () => {
   //Retrive LawyerData
   const fetchAllData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/getLawyersFeed", {
+      const response = await fetch("https://legal-buddy-ogyb.onrender.com/", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
