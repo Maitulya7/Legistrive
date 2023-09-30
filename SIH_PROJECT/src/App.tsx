@@ -8,7 +8,7 @@ import MyOrder from './Components/TalkToLawyer/MyOrder';
 import Chatbot from './Components/Chatbot';
 import Dashboard from './Components/TalkToLawyer/Dashboard';
 import LawyerProfile from './Components/LawyerProfile';
-// import Register from './Components/register';
+import Register from './Components/register';
 import Login from './Components/login';
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/login" element={<Login/>} />
-        {/* <Route path="/register" element={<Register />} /> */}
+        <Route path="/register" element={<Register />} />
         <Route path="/" element={<Home/> } /> 
         <Route path="/Lawyer" element={<Lawyer/> } /> 
         <Route path="/LawyerCard" element={<LawyerCard/> } /> 

@@ -66,6 +66,7 @@ function Register() {
           </p>
 
           <input
+          className="Register_input"
             type="text"
             name="first_name"
             placeholder="First Name"
@@ -73,6 +74,7 @@ function Register() {
             onChange={handleChange}
           />
           <input
+           className="Register_input"
             type="text"
             name="last_name"
             placeholder="Last Name"
@@ -80,6 +82,7 @@ function Register() {
             onChange={handleChange}
           />
           <input
+           className="Register_input"
             type="email"
             name="email"
             placeholder="Email"
@@ -87,6 +90,7 @@ function Register() {
             onChange={handleChange}
           />
           <input
+           className="Register_input"
             type="text"
             name="phone_number"
             placeholder="Phone Number"
@@ -94,6 +98,7 @@ function Register() {
             onChange={handleChange}
           />
           <input
+           className="Register_input"
             type="password"
             name="password"
             placeholder="Password"
@@ -106,7 +111,7 @@ function Register() {
           </button>
 
           <p className="register-sub-title">Already A Member?</p>
-          <Link to="/login">Login</Link>
+          <Link className="redirect_to_login" to="/login">Login</Link>
         </div>
 
         <div className="register-right-container">
